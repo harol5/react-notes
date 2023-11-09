@@ -24,6 +24,12 @@ function NavBar() {
           <li>
             <Link to="/demo">Demo</Link>
           </li>
+          <li>
+            <Link to="/wordpress">Wordpress</Link>
+          </li>
+          <li>
+            <Link to="/context">Context</Link>
+          </li>
         </ul>
       </nav>
     </header>

@@ -1,16 +1,18 @@
 import { useState } from "react";
 
 function UseStateHook() {
+  console.log("use state hook");
+  let id = 1;
   const [user, setUser] = useState({ name: "", age: "" });
   const [users, setUsers] = useState([]);
-  let id = 1;
+
+  const addUser = (e) => {
+    setUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
   const submmitHandler = (e) => {
     e.preventDefault();
     setUsers((prev) => [...prev, user]);
     setUser((prev) => ({ ...prev, name: "", age: "" }));
-  };
-  const addUser = (e) => {
-    setUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   return (

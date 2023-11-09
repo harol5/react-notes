@@ -36,6 +36,7 @@ function UseReducerHook() {
     }
   };
   const [state, dispatch] = useReducer(reducer, newPost);
+
   const postHandler = (e) => {
     e.preventDefault();
     dispatch({ type: "add-post" });
@@ -44,6 +45,7 @@ function UseReducerHook() {
   return (
     <div className="hook-style">
       <h1>useReducer Hook</h1>
+
       <form onSubmit={postHandler}>
         <p>
           <label>Your name:</label>
@@ -72,6 +74,7 @@ function UseReducerHook() {
         </p>
         <button>Post</button>
       </form>
+
       <section>
         <h2>Posts</h2>
         {state.allPost.map((p) => (
