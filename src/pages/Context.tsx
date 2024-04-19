@@ -27,7 +27,7 @@ function usePosts() {
   return { posts };
 }
 
-//this creates a context and the value passed on the function call will be the value.
+//this creates a context and the value passed to the function-call will be the value.
 const PostsContext = createContext({
   posts: [] as Posts[],
 });
