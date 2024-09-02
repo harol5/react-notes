@@ -11,7 +11,7 @@ const ControlMain = styled.main`
   color: #33ff00;
 `;
 
-function Favorite() {
+function UseEffectHook() {
   const deleteNameRef = useRef();
   const [users, setUsers] = useState([]);
   const [deleteNameIndex, setDeleteNameIndex] = useState();
@@ -70,4 +70,4 @@ function Favorite() {
   );
 }
 
-export default Favorite;
+export default UseEffectHook;

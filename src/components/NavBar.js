@@ -16,7 +16,7 @@ function NavBar() {
             <Link to="/use-reducer-hook">useReducer Hook</Link>
           </li>
           <li>
-            <Link to="/favorites">useEffect Hook</Link>
+            <Link to="/use-effect-hook">useEffect Hook</Link>
           </li>
           <li>
             <Link to="/to-do">To do</Link>
@@ -29,6 +29,9 @@ function NavBar() {
           </li>
           <li>
             <Link to="/context">Context</Link>
+          </li>
+          <li>
+            <Link to="/use-memo-hook">useMemo hook</Link>
           </li>
         </ul>
       </nav>

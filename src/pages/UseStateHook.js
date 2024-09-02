@@ -1,19 +1,35 @@
-import { useState } from "react";
+import { memo, useCallback, useEffect, useState } from "react";
+import Test from "../components/Test";
 
 function UseStateHook() {
-  console.log("use state hook");
+  console.log("UseStateHook Component");
   let id = 1;
   const [user, setUser] = useState({ name: "", age: "" });
   const [users, setUsers] = useState([]);
 
+  useEffect(() => {
+    console.log("UseStateHook useEffect");
+  }, []);
+
   const addUser = (e) => {
     setUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+
   const submmitHandler = (e) => {
     e.preventDefault();
     setUsers((prev) => [...prev, user]);
     setUser((prev) => ({ ...prev, name: "", age: "" }));
   };
+
+  // useCallBack memoized this function because on every re render a new function
+  // is created, making any components who has it as prop to render again.
+  const printParentName = useCallback(() => {
+    console.log("test parent");
+    setUser((prev) => ({
+      ...prev,
+      name: prev.name + String.fromCodePoint(Math.round(Math.random() * 100)),
+    }));
+  }, []);
 
   return (
     <div className="hook-style">
@@ -27,6 +43,7 @@ function UseStateHook() {
           <input type="text" name="age" value={user.age} onChange={addUser} />
           <button>add</button>
         </form>
+        <Test data={users} onPrintName={printParentName} />
         <section>
           <ul>
             {users.map((u) => (
