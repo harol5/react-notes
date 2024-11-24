@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+
 function UseReducerHook() {
   let id = 1;
   const newPost = {
@@ -42,6 +43,14 @@ function UseReducerHook() {
     dispatch({ type: "add-post" });
   };
 
+  const callingDispatchFunc = () => {
+    dispatch({ type: "set-name", payload: { name: "juan" } });
+    dispatch({
+      type: "set-comment",
+      payload: { comment: "this is a test" },
+    });
+  };
+  console.log(state);
   return (
     <div className="hook-style">
       <h1>useReducer Hook</h1>
@@ -74,6 +83,8 @@ function UseReducerHook() {
         </p>
         <button>Post</button>
       </form>
+
+      <button onClick={callingDispatchFunc}>test</button>
 
       <section>
         <h2>Posts</h2>

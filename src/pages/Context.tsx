@@ -25,6 +25,7 @@ function usePosts(text: string) {
   const [posts, setPosts] = useState<Posts[]>([]);
 
   const handleSetPosts = useCallback((posts: Posts[]) => setPosts(posts), []);
+  // const handleSetPosts = (posts: Posts[]) => setPosts(posts);
 
   useEffect(() => {
     console.log("usePosts Custom hook -> useEffect called!! -");
